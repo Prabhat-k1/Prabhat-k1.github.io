@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prabhat Kumar — Electrical Engineer</title>
+<meta name="description" content="Prabhat Kumar — Electrical Engineering graduate working in vehicle testing, ECU flashing and data acquisition at Tata Motors ERC. Six patents filed.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06080B; --panel:rgba(255,255,255,.035); --line:rgba(255,255,255,.10);
+  --ink:#EDF1F5; --mute:#8D98A6; --signal:#F0B23C; --probe:#68D8D0;
+  --display:'Sora',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="light"]){color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+.wrap{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:0 24px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.02em;line-height:1.1;margin:0}
+p{max-width:68ch}
+
+/* nav */
+nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,8,11,.72);border-bottom:1px solid var(--line)}
+.navin{max-width:1080px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:20px}
+.mark{font-family:var(--display);font-weight:700;letter-spacing:.04em;font-size:15px}
+.mark span{color:var(--signal)}
+.links{margin-left:auto;display:flex;gap:22px;font-size:13.5px;color:var(--mute)}
+.links a{text-decoration:none;transition:color .2s}
+.links a:hover,.links a:focus-visible{color:var(--ink)}
+#burger{display:none;margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:8px 12px;font:inherit;font-size:13px}
+
+/* hero */
+header{min-height:100svh;display:flex;align-items:center;padding:130px 0 80px}
+.hgrid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+.eyebrow{font-size:13px;color:var(--probe);letter-spacing:.06em;margin:0 0 18px}
+h1{font-size:clamp(42px,7.2vw,78px);font-weight:300}
+h1 b{font-weight:700;display:block}
+.lede{color:var(--mute);font-size:17.5px;margin:22px 0 34px;max-width:52ch}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;text-decoration:none;font-size:14.5px;font-family:var(--display);font-weight:500;transition:transform .25s,box-shadow .25s,background .25s}
+.solid{background:var(--signal);color:#161005;box-shadow:0 0 0 rgba(240,178,60,.5)}
+.solid:hover{transform:translateY(-2px);box-shadow:0 14px 34px -10px rgba(240,178,60,.55)}
+.ghost{border:1px solid var(--line);background:var(--panel)}
+.ghost:hover{transform:translateY(-2px);border-color:var(--probe)}
+
+.strip{display:flex;gap:30px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.stat{display:flex;align-items:center;gap:12px;color:var(--mute);font-size:14px}
+.stat svg{width:30px;height:30px;flex:none;stroke:var(--signal);fill:none;stroke-width:1.2}
+.stat svg.c{stroke:var(--probe)}
+.stat b{display:block;color:var(--ink);font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:-.01em}
+
+/* sections */
+section{padding:96px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.6vw,38px);margin-bottom:8px}
+.sub{color:var(--mute);font-size:14.5px;margin:0 0 44px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;backdrop-filter:blur(10px)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card h3{font-size:17px;margin-bottom:8px}
+.card p{font-size:14.5px;color:var(--mute);margin:0}
+.tilt{transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.tilt:hover{border-color:rgba(240,178,60,.45);transform:translateY(-6px) perspective(900px) rotateX(3deg)}
+
+/* timeline */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--signal),rgba(255,255,255,.08))}
+.job{position:relative;margin-bottom:34px}
+.job::before{content:"";position:absolute;left:-29px;top:8px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--signal)}
+.job .meta{color:var(--probe);font-size:13px;letter-spacing:.03em}
+.job h3{font-size:19px;margin:4px 0 2px}
+.job .org{color:var(--mute);font-size:14.5px;margin-bottom:10px}
+.job p{font-size:14.5px;color:var(--mute)}
+
+/* patents / tags */
+.pat{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px dashed var(--line);font-size:15px}
+.pat span{color:var(--mute);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.tag{border:1px solid var(--line);background:rgba(255,255,255,.03);border-radius:999px;padding:7px 14px;font-size:13.5px;color:var(--mute);transition:.25s}
+.tag:hover{color:var(--ink);border-color:var(--probe);transform:translateY(-3px)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{text-align:left;padding:14px 10px;border-bottom:1px solid var(--line)}
+th{color:var(--probe);font-weight:500;font-size:13px}
+td:last-child,th:last-child{text-align:right;color:var(--mute)}
+ul.plain{list-style:none;padding:0;margin:0;font-size:14.5px;color:var(--mute)}
+ul.plain li{padding:9px 0 9px 20px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:18px;width:7px;height:1px;background:var(--signal)}
+
+/* contact */
+.contact{text-align:center;padding-bottom:120px}
+.contact h2{font-size:clamp(30px,5vw,50px);font-weight:300;margin-bottom:26px}
+footer{padding:26px 0 40px;text-align:center;color:var(--mute);font-size:12.5px;border-top:1px solid var(--line)}
+
+.reveal{opacity:0;transform:translateY(22px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+:focus-visible{outline:2px solid var(--probe);outline-offset:3px;border-radius:6px}
+
+@media(max-width:840px){
+  .strip{gap:18px}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:rgba(6,8,11,.97);border-bottom:1px solid var(--line);padding:8px 24px 18px}
+  .links.open{display:flex}
+  .links a{padding:12px 0;border-bottom:1px solid var(--line)}
+  #burger{display:block}
+  section{padding:72px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+:root:not([data-theme="dark"]) body{background:var(--bg)}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+
+<nav>
+  <div class="navin">
+    <a class="mark" href="#home" style="text-decoration:none">PRABHAT<span>.</span></a>
+    <button id="burger" aria-expanded="false" aria-controls="links">Menu</button>
+    <div class="links" id="links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a>
+      <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+<header id="home">
+  <div class="hgrid">
+    <div>
+      <h1>Electrical engineer<b>Prabhat Kumar</b></h1>
+      <p class="lede">Electrical Engineering graduate with hands-on experience in ECU flashing, vehicle testing and data acquisition using VBOX and Ipetronik, currently supporting automotive validation activities. Six patents filed across medical, automotive and renewable-energy systems.</p>
+      <div class="cta">
+        <a class="btn solid" href="#projects">View my work</a>
+      </div>
+    </div>
+      </div>
+</header>
+
+<section id="about" class="reveal">
+  <h2>About</h2>
+  <p class="sub">What I do, in short.</p>
+  <div class="grid2">
+    <div class="card tilt"><h3>Testing &amp; validation</h3><p>Instrumentation lab work at Tata Motors ERC: managing testing equipment, supporting engineers through test activities, and keeping issue/return logs for equipment fitted in the vehicle.</p></div>
+    <div class="card tilt"><h3>Renewable energy</h3><p>Over a year selling residential and commercial solar EPC projects — site assessments, load analysis and roof surveys, plus proposals and client relationships.</p></div>
+    <div class="card tilt"><h3>Innovation</h3><p>Six patents filed while at college, from a microcontroller-driven medical drip to voice-assisted vehicle concepts and automated solar panel cleaning.</p></div>
+    <div class="card tilt"><h3>Where I'm headed</h3><p>A strong interest in testing, automation and electrical systems, building on instrumentation handling, safety practice and documentation.</p></div>
+  </div>
+</section>
+
+<section id="experience" class="reveal">
+  <h2>Experience</h2>
+  <p class="sub">Two roles, two industries.</p>
+  <div class="tl">
+    <div class="job">
+      <div class="meta">November 2025 — Present</div>
+      <h3>Lab Assistant</h3>
+      <div class="org">Tata Motors Ltd. — Engineering Research Centre</div>
+      <p>Instrumentation Lab Assistant supporting day-to-day lab operations. Responsible for managing testing equipment, assisting engineers during testing activities, and maintaining issue and return logs for testing equipment installed in the vehicle. Actively learning instrumentation handling, safety practices and documentation processes.</p>
+      <div class="tags"><span class="tag">ECU flashing</span><span class="tag">Vehicle testing</span><span class="tag">VBOX</span><span class="tag">Ipetronik</span></div>
+    </div>
+    <div class="job">
+      <div class="meta">April 2024 — July 2025 · 1 year 4 months</div>
+      <h3>Sales Manager</h3>
+      <div class="org">Vortex Solar Energy Private Limited</div>
+      <p>Identified potential customers, prepared customised proposals, conducted site assessments and closed deals for residential and commercial solar EPC projects. Ran on-site feasibility studies, load analysis and roof assessments, and explained technical solar solutions clearly to clients.</p>
+      <div class="tags"><span class="tag">Solar EPC</span><span class="tag">Site survey</span><span class="tag">Load calculation</span><span class="tag">Client relations</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2>Projects</h2>
+  <p class="sub">Built during my engineering studies.</p>
+  <div class="grid2">
+    <div class="card tilt"><h3>Automation and Control of Medical Drip</h3><p>A six-month R&amp;D project: a microcontroller and load-cell based device that controls the operation of a medical drip, connected over WiFi.</p><div class="tags"><span class="tag">Microcontroller</span><span class="tag">Load cell</span><span class="tag">WiFi</span></div></div>
+    <div class="card tilt"><h3>Dissolved Oxygen Control for Amphibians</h3><p>Measures dissolved oxygen in ponds and small water bodies, and maintains the level when it drops below 5 mg/L.</p><div class="tags"><span class="tag">Sensing</span><span class="tag">Control systems</span></div></div>
+  </div>
+
+  <h3 style="margin:48px 0 6px;font-size:20px">Patents filed</h3>
+  <p class="sub" style="margin-bottom:18px">Six filings with the Indian Patent Office.</p>
+  <div class="card">
+    <div class="pat">Medical Drip Automation System<span>202311014554</span></div>
+    <div class="pat">Automated Solar Panel Cleaning System<span>202411033270</span></div>
+    <div class="pat">Automated Dissolved Oxygen (DO) Control System<span>202411001527</span></div>
+    <div class="pat">Jalarogya — Smart Water Bottle<span>202311012379</span></div>
+    <div class="pat">Troy Car — Innovative Automotive Concept<span>202311000941</span></div>
+    <div class="pat" style="border:0">Bolo Car — Voice-Assisted Vehicle System<span>202311000932</span></div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2>Skills</h2>
+  <p class="sub">Listed as they appear on my résumé, without levels or scores.</p>
+  <div class="grid3">
+    <div class="card"><h3>Electrical</h3><div class="tags"><span class="tag">Electrical testing &amp; measurements</span><span class="tag">Basic instrumentation</span><span class="tag">Automation basics</span></div></div>
+    <div class="card"><h3>Renewable energy</h3><div class="tags"><span class="tag">Renewable energy</span><span class="tag">Solar PV systems</span><span class="tag">Site survey</span><span class="tag">Electrical load calculation</span></div></div>
+    <div class="card"><h3>Software &amp; other</h3><div class="tags"><span class="tag">Microsoft 365</span><span class="tag">Word</span><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Teams</span><span class="tag">Digital marketing &amp; advertising</span></div></div>
+  </div>
+</section>
+
+<section id="education" class="reveal">
+  <h2>Education</h2>
+  <p class="sub">Academic record.</p>
+  <div class="card" style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Course</th><th>Institution</th><th>Year</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>BTech, Electrical Engineering</td><td>Shri Ramswaroop Memorial College of Engineering and Management (AKTU)</td><td>2024</td><td>70.4%</td></tr>
+        <tr><td>Intermediate (CBSE)</td><td>Kendriya Vidyalaya Gomtinagar, Lucknow</td><td>2020</td><td>69%</td></tr>
+        <tr><td>High school (CBSE)</td><td>Kendriya Vidyalaya Gomtinagar, Lucknow</td><td>2017</td><td>80%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:18px">
+    <div class="card"><h3>Training</h3><ul class="plain">
+      <li>One month vocational training, U.P. Power Corporation</li>
+      <li>Four week Machine Learning certificate, CETPA</li>
+      <li>Hardware Design using Digital Components, PinE Training Academy</li>
+      <li>N.C.C. (National Cadet Corps) 'A' Certificate holder</li></ul></div>
+    <div class="card"><h3>Certifications</h3><ul class="plain">
+      <li>Machine Learning with Python — IBM, 2025</li>
+      <li>Google Analytics Certification — Google, 2025</li>
+      <li>Google Ads for Beginners — Coursera, 2025</li>
+      <li>Build a Free Website with WordPress — Coursera, 2025</li></ul></div>
+  </div>
+</section>
+
+<section id="achievements" class="reveal">
+  <h2>Achievements</h2>
+  <p class="sub">Competitions and activities.</p>
+  <div class="grid3">
+    <div class="card tilt"><h3>1st Runner-Up</h3><p>Innovation R Us, Yeshwant Rao Chavan College of Engineering, Nagpur</p></div>
+    <div class="card tilt"><h3>2nd Position</h3><p>Robowar, Maharishi Robusta Championship 2022</p></div>
+    <div class="card tilt"><h3>Participant</h3><p>Purvanchal Startup Mahotsav 2024, KNIT Sultanpur</p></div>
+    <div class="card tilt"><h3>Organiser</h3><p>Event coordination and IEEE Robofest organisation experience</p></div>
+  </div>
+</section>
+
+<section id="contact" class="contact reveal">
+  <h2>Let's build something meaningful.</h2>
+  <div class="cta" style="justify-content:center">
+    <a class="btn solid" href="mailto:prabhatpk.4567@gmail.com">prabhatpk.4567@gmail.com</a>
+    <a class="btn ghost" href="tel:+918052020565">+91 8052020565</a>
+  </div>
+</section>
+</div>
+<footer>Prabhat Kumar — Electrical Engineer</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var b=document.getElementById('burger'),l=document.getElementById('links');
+  b.addEventListener('click',function(){var o=l.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  l.addEventListener('click',function(e){if(e.target.tagName==='A')l.classList.remove('open')});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(rm||!window.THREE)return;
+  var cv=document.getElementById('bg'),mob=innerWidth<840;
+  var r=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!mob});
+  r.setPixelRatio(Math.min(devicePixelRatio,mob?1.5:2));r.setSize(innerWidth,innerHeight);
+  var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,.1,100);cam.position.z=14;
+  var n=mob?420:1300,pos=new Float32Array(n*3);
+  for(var i=0;i<n;i++){pos[i*3]=(Math.random()-.5)*44;pos[i*3+1]=(Math.random()-.5)*30;pos[i*3+2]=(Math.random()-.5)*26}
+  var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  var dust=new THREE.Points(g,new THREE.PointsMaterial({size:.055,color:0x9fb2c4,transparent:true,opacity:.6}));sc.add(dust);
+  var shape=new THREE.Mesh(new THREE.IcosahedronGeometry(3.4,1),new THREE.MeshBasicMaterial({color:0xF0B23C,wireframe:true,transparent:true,opacity:.13}));
+  shape.position.set(-9,3.6,-9);sc.add(shape);
+  // wheel / rim
+  var wheel=new THREE.Group();
+  wheel.add(new THREE.Mesh(new THREE.TorusGeometry(2.9,.12,10,70),new THREE.MeshBasicMaterial({color:0xF0B23C,transparent:true,opacity:.34})));
+  wheel.add(new THREE.Mesh(new THREE.TorusGeometry(1.15,.05,8,50),new THREE.MeshBasicMaterial({color:0xF0B23C,transparent:true,opacity:.26})));
+  var sm=new THREE.LineBasicMaterial({color:0xF0B23C,transparent:true,opacity:.24}),sp=[];
+  for(var k=0;k<10;k++){var a=k/10*Math.PI*2;sp.push(Math.cos(a)*1.1,Math.sin(a)*1.1,0,Math.cos(a)*2.85,Math.sin(a)*2.85,0)}
+  var sg=new THREE.BufferGeometry();sg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(sp),3));
+  wheel.add(new THREE.LineSegments(sg,sm));
+  wheel.position.set(8.2,-1.2,-3);sc.add(wheel);
+  // solar array
+  var array=new THREE.Group();
+  for(var p=0;p<3;p++){
+    var panel=new THREE.Mesh(new THREE.PlaneGeometry(3.6,2.2,6,4),new THREE.MeshBasicMaterial({color:0x68D8D0,wireframe:true,transparent:true,opacity:.2}));
+    panel.position.set(p*4.1-4.1,0,0);array.add(panel);
+  }
+  array.position.set(-7.5,-4.6,-7);array.rotation.set(-.9,.32,0);sc.add(array);
+  // hex cells
+  var hex=new THREE.Mesh(new THREE.TorusGeometry(1.5,.03,6,6),new THREE.MeshBasicMaterial({color:0x68D8D0,transparent:true,opacity:.3}));
+  hex.position.set(7,4.6,-6);sc.add(hex);
+  var ring=new THREE.Mesh(new THREE.TorusGeometry(7.2,.02,8,90),new THREE.MeshBasicMaterial({color:0x68D8D0,transparent:true,opacity:.16}));
+  ring.position.set(-7,-2,-11);sc.add(ring);
+  var mx=0,my=0,tx=0,ty=0;
+  addEventListener('pointermove',function(e){tx=(e.clientX/innerWidth-.5);ty=(e.clientY/innerHeight-.5)},{passive:true});
+  addEventListener('resize',function(){cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();r.setSize(innerWidth,innerHeight)});
+  (function loop(t){requestAnimationFrame(loop);
+    mx+=(tx-mx)*.04;my+=(ty-my)*.04;
+    cam.position.x=mx*3;cam.position.y=-my*2;cam.lookAt(0,0,0);
+    dust.rotation.y=t*.000035;
+    shape.rotation.x=t*.00012;shape.rotation.y=t*.00016;shape.position.y=3.6+Math.sin(t*.0006)*.4;
+    wheel.rotation.z=-t*.00035;wheel.rotation.y=.35+mx*.35;wheel.position.y=-1.2+Math.sin(t*.0005)*.35;
+    array.rotation.z=Math.sin(t*.00025)*.08;array.position.y=-4.6+Math.sin(t*.0004+1)*.3;
+    hex.rotation.z=t*.0002;hex.rotation.x=.4+Math.sin(t*.0004)*.2;
+    ring.rotation.x=1.1+Math.sin(t*.0003)*.15;ring.rotation.z=t*.00008;
+    r.render(sc,cam);
+  })(0);
+})();
+</script>
+<script>
+</script>
+</body>
+</html>
